@@ -21,7 +21,8 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "declarations/sequelize-mock.d.ts"
   ],
   "exclude": [
     "node_modules",
