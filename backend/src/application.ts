@@ -1,8 +1,10 @@
 import * as express from "express";
-import {pingController} from "./controllers/ping";
+import { apiController } from "./controllers/api";
+
+require("dotenv").config();
 
 const app = express();
 
-app.use(pingController);
+app.use(apiController);
 
 export default app;
