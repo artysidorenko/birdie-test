@@ -3,12 +3,14 @@ import styled, { createGlobalStyle } from 'styled-components';
 import { RootState } from '@App/store/reducers';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
+import { Route } from 'react-router-dom';
 
-import Title from '@App/components/Title';
-import Logo from '@App/components/Logo';
-import SubTitle from '@App/components/SubTitle';
+import Menu from '@App/components/Menu';
 
-const LogoUrl = require('../../assets/images/logo-birdie.svg');
+import Dashboard from './views/Dashboard';
+import Visits from './views/Visits';
+import Nutrition from './views/Nutrition';
+import Observations from './views/Observations';
 
 interface AppProps {
 
@@ -31,10 +33,6 @@ const GlobalStyle = createGlobalStyle`
 const AppContainer = styled.div`
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 `;
 
 class App extends React.Component<AppProps, AppState> {
@@ -47,9 +45,13 @@ class App extends React.Component<AppProps, AppState> {
       <>
         <GlobalStyle />
         <AppContainer>
-          <Logo src={LogoUrl} />
-          <Title>Welcome to the birdie test</Title>
-          <SubTitle>Best of luck!</SubTitle>
+          <Menu />
+
+          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/visits" component={Visits} />
+          <Route path="/nutrition" component={Nutrition} />
+          <Route path="/observations" component={Observations} />
+
         </AppContainer>
       </>
     );
