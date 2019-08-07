@@ -10,6 +10,7 @@ describe('Server router', () => {
       .get("/thisisnotacorrectroute")
       .expect(404);
   })
+  // TODO: correct this
   it("should return a 404 response when no event type is requested", async () => {
     await request(app)
       .get("/api/events")
