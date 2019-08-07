@@ -1,42 +1,42 @@
-import { actionTypes, actions } from '../types';
+import { ActionTypes, actions } from '../types';
 
-export function GetEvents(): actionTypes {
+export function getEvents(): ActionTypes {
   return {
     type: actions.GET_EVENTS
   };
 }
-export function GetFluidIntake(): actionTypes {
+export function getFluidIntake(): ActionTypes {
   return {
     type: actions.GET_FLUID_INTAKE
   };
 }
-export function GetFoodIntake(): actionTypes {
+export function getFoodIntake(): ActionTypes {
   return {
     type: actions.GET_FOOD_INTAKE
   };
 }
-export function GetMedication(): actionTypes {
+export function getMedication(): ActionTypes {
   return {
     type: actions.GET_MEDICATION
   };
 }
-export function GetMoods(): actionTypes {
+export function getMoods(): ActionTypes {
   return {
     type: actions.GET_MOODS
   };
 }
-export function GetObservations(): actionTypes {
+export function getObservations(): ActionTypes {
   return {
     type: actions.GET_OBSERVATIONS
   };
 }
-export function GetPadCondition(): actionTypes {
+export function getPadCondition(): ActionTypes {
   return {
     type: actions.GET_PAD_CONDITION
   };
 }
-export function GetTasks(): actionTypes {
+export function getTasks(): ActionTypes {
   return {
     type: actions.GET_TASKS
   };
-};
+}

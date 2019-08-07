@@ -1,12 +1,42 @@
 export const initialState = {
-  events: [],
-  fluid_intake: [],
-  food_intake: [],
-  observations: [],
-  pad_condition: [],
-  moods: [],
-  medication: [],
-  tasks: [],
-  loading: false,
-  error: null,
+  events: {
+    events: [],
+    status: null,
+    error: null
+  },
+  fluid_intake: {
+    fluid_intake: [],
+    status: null,
+    error: null
+  },
+  food_intake: {
+    food_intake: [],
+    status: null,
+    error: null
+  },
+  observations: {
+    observations: [],
+    status: null,
+    error: null
+  },
+  pad_condition: {
+    pad_condition: [],
+    status: null,
+    error: null
+  },
+  moods: {
+    moods: [],
+    status: null,
+    error: null
+  },
+  medication: {
+    medication: [],
+    status: null,
+    error: null
+  },
+  tasks: {
+    tasks: [],
+    status: null,
+    error: null
+  }
 };
