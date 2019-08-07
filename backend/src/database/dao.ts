@@ -18,7 +18,7 @@ export class EventsDAO {
     const events = await this.repo.findAll({
       where: { care_recipient_id: id }
     });
-    const results:string[] = events.map(elem => elem.payload_as_text);
+    const results:string[] = events.map(elem => JSON.parse(elem.payload_as_text));
     return results;
   }
 
@@ -26,7 +26,7 @@ export class EventsDAO {
     const events = await this.repo.findAll({
       where: { care_recipient_id: id, event_type: type }
     });
-    const results:string[] = events.map(elem => elem.payload_as_text);
+    const results:string[] = events.map(elem => JSON.parse(elem.payload_as_text));
     return results;
   }
 }

@@ -24,9 +24,11 @@ import {
   getTasks
 } from './store/actions';
 
-interface AppProps {
-
+export interface ActionProps {
+  getEvents: () => void;
 }
+
+type AppProps = DataState & ActionProps;
 
 interface AppState {
 
@@ -51,19 +53,24 @@ class App extends React.Component<AppProps, AppState> {
   public constructor(props: AppProps) {
     super(props);
   }
+  componentDidMount() {
+    this.props.getEvents();
+  }
 
   public render() {
+    /* tslint:disable:no-console */
+    console.log(this.props.events.status, this.props.events.events[0]);
     return (
       <>
         <GlobalStyle />
         <AppContainer>
           <Menu />
-
+          {this.props.events.status}
+          {this.props.events.events.toString()}
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/visits" component={Visits} />
           <Route path="/nutrition" component={Nutrition} />
           <Route path="/observations" component={Observations} />
-
         </AppContainer>
       </>
     );

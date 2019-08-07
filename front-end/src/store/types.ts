@@ -72,7 +72,7 @@ export interface GetEvents {
 }
 export interface GetEventsResponse {
   type: typeof actions.GET_EVENTS_RESPONSE;
-  status: typeof status | undefined | null;
+  status: status;
   response: Event[] | Error;
 }
 
@@ -180,13 +180,13 @@ export type PadState = LoadingState & {
   readonly pad_condition: PadCondition[];
 };
 export type MoodState = LoadingState & {
-  readonly moods: Event[];
+  readonly moods: Mood[];
 };
 export type MedicationState = LoadingState & {
-  readonly medication: Event[];
+  readonly medication: Medication[];
 };
 export type TaskState = LoadingState & {
-  readonly tasks: Event[];
+  readonly tasks: Task[];
 };
 
 export type DataState = {
