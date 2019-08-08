@@ -5,10 +5,10 @@ import styled from 'styled-components';
 import Logo from '@App/components/Logo';
 
 const buttons = [
-  { title: 'Dashboard', link: '/dashboard' },
-  { title: 'Visits', link: '/visits' },
+  { title: 'Home', link: '/' },
+  { title: 'General', link: '/general' },
   { title: 'Nutrition', link: '/nutrition' },
-  { title: 'Observations', link: '/observations' }
+  { title: 'Other', link: '/other' }
 ];
 
 const StyledNavLink = styled(NavLink)`

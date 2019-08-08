@@ -13,7 +13,7 @@ const sharedDatasetOptions: ChartDataSets = {
   borderDashOffset: 0.0,
   borderJoinStyle: 'miter',
   pointBorderWidth: 1,
-  pointHoverRadius: 5,
+  pointHoverRadius: 9,
   pointHoverBorderWidth: 2,
   pointRadius: 3,
   pointHitRadius: 10
@@ -62,6 +62,7 @@ const FoodGraph = ({ data }: {data: FoodIntake[]}) => {
   };
 
   const toolTipOptions: ChartTooltipOptions = {
+    displayColors: false,
     callbacks: {
       label: function(tooltipItem: ChartTooltipItem) {
         let index = tooltipItem.index ? tooltipItem.index : 0;
@@ -72,7 +73,10 @@ const FoodGraph = ({ data }: {data: FoodIntake[]}) => {
   };
 
   return (
-    <Line data={chartData} options={{...chartOptions, tooltips: {...toolTipOptions}}} />
+    <Line
+      data={chartData}
+      options={{ ...chartOptions, tooltips: { ...toolTipOptions } }}
+    />
   );
 };
 

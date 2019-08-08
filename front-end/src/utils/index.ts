@@ -1,5 +1,6 @@
 import * as _ from 'lodash';
-import { FluidIntake, FoodIntake } from '@App/store/types';
+import * as moment from 'moment';
+import { FluidIntake, FoodIntake, Event, Mood, Medication, PadCondition, Task } from '@App/store/types';
 
 /**
  * Main purpose of these functions is to transform the raw array of events from backend db
@@ -8,7 +9,7 @@ import { FluidIntake, FoodIntake } from '@App/store/types';
  */
 
 /* tslint:disable-next-line:no-any */
-function generateSortedArray (dataArray: Array<any>): Array<any> {
+export function generateSortedArray (dataArray: Array<any>): Array<any> {
   return dataArray.map(event => {
       const day = event.timestamp.toString().substr(5, 5);
       return { day, ...event };
@@ -21,16 +22,25 @@ function generateSortedArray (dataArray: Array<any>): Array<any> {
 }
 
 /* tslint:disable-next-line:no-any */
-function getUniqueDates (dataArray: Array<any>): string[] {
+function addWeeksToArray (sortedArray: Array<any>): Array<any> {
+  return sortedArray.map(event => {
+    const date = moment(event.timestamp);
+    const week = date.week();
+    return { week, ...event};
+  });
+}
+
+/* tslint:disable-next-line:no-any */
+function getUniqueValues (dataArray: Array<any>, property: string): string[] {
   return Array.from(
-    new Set(dataArray.map(event => event.day))
+    new Set(dataArray.map(event => event[property]))
   );
 }
 
 export function getFluidDataByDay(data: FluidIntake[]) {
 
   const parsedData = generateSortedArray(data);
-  const uniqueDates = getUniqueDates(parsedData);
+  const uniqueDates = getUniqueValues(parsedData, 'day');
 
   return uniqueDates.map(date => {
 
@@ -54,7 +64,7 @@ export function getFluidDataByDay(data: FluidIntake[]) {
 export function getFoodDataByDay(data: FoodIntake[]) {
 
   const parsedData = generateSortedArray(data);
-  const uniqueDates = getUniqueDates(parsedData);
+  const uniqueDates = getUniqueValues(parsedData, 'day');
 
   return uniqueDates.map(date => {
 
@@ -72,6 +82,123 @@ export function getFoodDataByDay(data: FoodIntake[]) {
         'SNACKS:',
         ...todaySnack.map(e => e.note)
       ]
+    };
+  });
+}
+
+export function getVisitsDataByDay (data: Event[]) {
+
+  const parsedData = generateSortedArray(data);
+  const uniqueDates = getUniqueValues(parsedData, 'day');
+
+  return uniqueDates.map(date => {
+
+    const today = parsedData.filter(e => e.day === date);
+    const uniqueVisits = new Set(today.map(e => e.visit_id));
+
+    return {
+      day: date,
+      visits: uniqueVisits.size
+    };
+  });
+}
+
+export function getCarerData (data: Event[]) {
+
+  const uniqueCarers = getUniqueValues(data, 'caregiver_id');
+
+  return uniqueCarers.map(carer => {
+
+    const carerEvents = data.filter(e => e.caregiver_id === carer);
+    const visitIDs = new Set(carerEvents.map(e => e.visit_id));
+
+    return {
+      carer,
+      visits: visitIDs.size
+    };
+  });
+}
+
+export function getTaskData(data: Task[]) {
+  const taskTypes = getUniqueValues(data, 'task_definition_description');
+
+  return taskTypes.map(task => {
+    const taskEvents = data.filter(e => e.task_definition_description === task);
+    const notes = taskEvents.map(e => e.task_schedule_note);
+
+    return {
+      task,
+      count: taskEvents.length,
+      notes
+    };
+  });
+}
+
+export function getMoodDataByWeek (data: Mood[]) {
+
+  const parsedData = addWeeksToArray(generateSortedArray(data));
+
+  const uniqueWeeks = getUniqueValues(parsedData, 'week');
+
+  return uniqueWeeks.map(week => {
+
+    const thisWeek = parsedData.filter(e => e.week === week);
+    const happyCount = thisWeek.filter(e => e.mood === 'happy').length;
+    const okayCount = thisWeek.filter(e => e.mood === 'okay').length;
+    const sadCount = thisWeek.filter(e => e.mood === 'sad').length;
+    const total = happyCount + okayCount + sadCount;
+    // assume happy = 100, okay = 50, and sad = 0
+    const moodScore = 100 * ( happyCount + (0.5 * okayCount) ) / total;
+    const notes = thisWeek
+      .filter(e => !!e.note)
+      .map(e => `${e.day} - ${e.note}`);
+
+    return {
+      week,
+      moodScore,
+      notes,
+      observations: total
+    };
+  });
+}
+
+export function getMedicationDataByWeek(data: Medication[]) {
+  const parsedData = addWeeksToArray(generateSortedArray(data));
+
+  const uniqueWeeks = getUniqueValues(parsedData, 'week');
+
+  return uniqueWeeks.map(week => {
+    const thisWeek = parsedData.filter(e => e.week === week);
+    const taken = thisWeek.filter(e => e.event_type === 'regular_medication_taken').length;
+    const missed = thisWeek.filter(
+      e => e.event_type === 'regular_medication_not_taken'
+    ).length;
+    const total = taken + missed;
+    
+    const medMissedPercent = 100 * missed / total;
+    
+    return {
+      week,
+      missed,
+      medMissedPercent
+    };
+  });
+}
+
+export function getPadDataByWeek(data: PadCondition[]) {
+  const parsedData = addWeeksToArray(generateSortedArray(data));
+
+  const uniqueWeeks = getUniqueValues(parsedData, 'week');
+
+  return uniqueWeeks.map(week => {
+    const thisWeek = parsedData.filter(e => e.week === week);
+    const soiled = thisWeek.filter(e => e.pad_condition === 'soiled').length;
+    const wet = thisWeek.filter(e => e.pad_condition === 'wet').length;
+    
+    return {
+      week,
+      soiled,
+      wet
     };
   });
 }

@@ -1,35 +1,18 @@
 import * as React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import { RootState } from '@App/store/reducers';
-import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
 import { Route } from 'react-router-dom';
 
 import Menu from '@App/components/Menu';
 
-import Dashboard from './views/Dashboard';
-import Visits from './views/Visits';
+import Home from './views/Home';
+import General from './views/General';
 import Nutrition from './views/Nutrition';
-import Observations from './views/Observations';
-
-import { DataState } from './store/types';
-import {
-  getEvents,
-  getFluidIntake,
-  getFoodIntake,
-  getMedication,
-  getMoods,
-  getObservations,
-  getPadCondition,
-  getTasks
-} from './store/actions';
+import Other from './views/Other';
 
 interface ActionProps {
-  getEvents: () => void;
-  getFluidIntake: () => void;
 }
 
-type AppProps = DataState & ActionProps;
+type AppProps = ActionProps;
 
 interface AppState {
 
@@ -55,47 +38,24 @@ class App extends React.Component<AppProps, AppState> {
     super(props);
   }
   componentDidMount() {
-    this.props.getEvents();
   }
 
   public render() {
     /* tslint:disable:no-console */
-    console.log(this.props.events.status, this.props.events.events[0]);
+    // console.log(this.props.events.status, this.props.events.events);
     return (
       <>
         <GlobalStyle />
         <AppContainer>
           <Menu />
-          <Route path="/dashboard" component={Dashboard} />
-          <Route path="/visits" component={Visits} />
+          <Route exact={true} path="/" component={Home} />
+          <Route path="/general" component={General} />
           <Route path="/nutrition" component={Nutrition} />
-          <Route path="/observations" component={Observations} />
+          <Route path="/other" component={Other} />
         </AppContainer>
       </>
     );
   }
 }
 
-const mapStateToProps = (state: RootState, ownProps: object): DataState => ({
-  events: state.data.events,
-  fluid_intake: state.data.fluid_intake,
-  food_intake: state.data.food_intake,
-  observations: state.data.observations,
-  pad_condition: state.data.pad_condition,
-  moods: state.data.moods,
-  medication: state.data.medication,
-  tasks: state.data.tasks
-});
-
-const mapDispatchToProps = (dispatch: Dispatch<RootState>) => ({
-  getEvents: () => dispatch(getEvents()),
-  getFluidIntake: () => dispatch(getFluidIntake()),
-  getFoodIntake: () => dispatch(getFoodIntake()),
-  getMedication: () => dispatch(getMedication()),
-  getMoods: () => dispatch(getMoods()),
-  getObservations: () => dispatch(getObservations()),
-  getPadCondition: () => dispatch(getPadCondition()),
-  getTasks: () => dispatch(getTasks())
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

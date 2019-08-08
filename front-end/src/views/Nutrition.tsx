@@ -38,14 +38,14 @@ class Nutrition extends React.Component<AppProps> {
     return (
       <div>
         {fluidStatus === fetchStatus.SUCCESS ? (
-          <StyledContainer>
+          <StyledContainer id="fluid">
             <FluidGraph data={fluid_intake} />
           </StyledContainer>
         ) : (
           <span>Loading...</span>
         )}
         {foodStatus === fetchStatus.SUCCESS ? (
-          <StyledContainer>
+          <StyledContainer id="food">
             <FoodGraph data={food_intake} />
           </StyledContainer>
         ) : (

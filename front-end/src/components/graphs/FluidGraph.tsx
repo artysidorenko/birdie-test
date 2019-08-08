@@ -13,7 +13,7 @@ const sharedDatasetOptions: ChartDataSets = {
   borderDashOffset: 0.0,
   borderJoinStyle: 'miter',
   pointBorderWidth: 1,
-  pointHoverRadius: 5,
+  pointHoverRadius: 9,
   pointHoverBorderWidth: 2,
   pointRadius: 3,
   pointHitRadius: 10
