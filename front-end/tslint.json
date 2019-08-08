@@ -1,5 +1,7 @@
 {
-  "extends": ["tslint-react"],
+  "extends": [
+    "tslint-react"
+  ],
   "linterOptions": {
     "exclude": ["node_modules/**"]
   },
@@ -21,9 +23,10 @@
     "max-line-length": [true, 120],
     "member-ordering": [
       true,
+      { "order": [
       "public-before-private",
       "static-before-instance",
-      "variables-before-functions"
+      "variables-before-functions"]}
     ],
     "no-any": true,
     "no-arg": true,

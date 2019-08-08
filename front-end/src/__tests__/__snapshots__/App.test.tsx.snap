@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Application renders without crashing (shallow) 1`] = `
+<Fragment>
+  <GlobalStyleComponent />
+  <styled.div>
+    <MenuDesktop />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      path="/general"
+    />
+    <Route
+      component={[Function]}
+      path="/nutrition"
+    />
+    <Route
+      component={[Function]}
+      path="/other"
+    />
+  </styled.div>
+</Fragment>
+`;
