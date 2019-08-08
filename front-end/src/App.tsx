@@ -24,8 +24,9 @@ import {
   getTasks
 } from './store/actions';
 
-export interface ActionProps {
+interface ActionProps {
   getEvents: () => void;
+  getFluidIntake: () => void;
 }
 
 type AppProps = DataState & ActionProps;
@@ -65,8 +66,6 @@ class App extends React.Component<AppProps, AppState> {
         <GlobalStyle />
         <AppContainer>
           <Menu />
-          {this.props.events.status}
-          {this.props.events.events.toString()}
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/visits" component={Visits} />
           <Route path="/nutrition" component={Nutrition} />

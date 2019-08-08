@@ -67,7 +67,7 @@ export function getEventsResponse(
 }
 export function getFluidIntakeResponse(
   response: FluidIntake[] | Error,
-  _status: typeof status
+  _status: status
 ): ActionTypes {
   return {
     type: actions.GET_FLUID_INTAKE_RESPONSE,
@@ -77,7 +77,7 @@ export function getFluidIntakeResponse(
 }
 export function getFoodIntakeResponse(
   response: FoodIntake[] | Error,
-  _status: typeof status
+  _status: status
 ): ActionTypes {
   return {
     type: actions.GET_FOOD_INTAKE_RESPONSE,
@@ -87,7 +87,7 @@ export function getFoodIntakeResponse(
 }
 export function getMedicationResponse(
   response: Medication[] | Error,
-  _status: typeof status
+  _status: status
 ): ActionTypes {
   return {
     type: actions.GET_MEDICATION_RESPONSE,
@@ -97,7 +97,7 @@ export function getMedicationResponse(
 }
 export function getMoodsResponse(
   response: Mood[] | Error,
-  _status: typeof status
+  _status: status
 ): ActionTypes {
   return {
     type: actions.GET_MOODS_RESPONSE,
@@ -107,7 +107,7 @@ export function getMoodsResponse(
 }
 export function getObservationsResponse(
   response: Observation[] | Error,
-  _status: typeof status
+  _status: status
 ): ActionTypes {
   return {
     type: actions.GET_OBSERVATIONS_RESPONSE,
@@ -117,7 +117,7 @@ export function getObservationsResponse(
 }
 export function getPadConditionResponse(
   response: PadCondition[] | Error,
-  _status: typeof status
+  _status: status
 ): ActionTypes {
   return {
     type: actions.GET_PAD_CONDITION_RESPONSE,
@@ -127,7 +127,7 @@ export function getPadConditionResponse(
 }
 export function getTasksResponse(
   response: Task[] | Error,
-  _status: typeof status
+  _status: status
 ): ActionTypes {
   return {
     type: actions.GET_TASKS_RESPONSE,

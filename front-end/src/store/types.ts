@@ -1,15 +1,17 @@
 // #1 INDIVIDUAL DATAPOINT INTERFACES
 
 export interface Event {
+  id: string;
   event_type: string;
   timestamp: Date;
   caregiver_id: string;
   visit_id: string;
+  care_recipient_id: string;
 }
 
 export interface FluidIntake extends Event {
   fluid: string;
-  cosumed_volume_ml: number;
+  consumed_volume_ml: number;
 }
 
 export interface FoodIntake extends Event {
@@ -81,7 +83,7 @@ export interface GetFluidIntake {
 }
 export interface GetFluidIntakeResponse {
   type: typeof actions.GET_FLUID_INTAKE_RESPONSE;
-  status: typeof status | undefined | null;
+  status: status;
   response: FluidIntake[] | Error;
 }
 
@@ -90,7 +92,7 @@ export interface GetFoodIntake {
 }
 export interface GetFoodIntakeResponse {
   type: typeof actions.GET_FOOD_INTAKE_RESPONSE;
-  status: typeof status | undefined | null;
+  status: status;
   response: FoodIntake[] | Error;
 }
 
@@ -99,7 +101,7 @@ export interface GetObservations {
 }
 export interface GetObservationsResponse {
   type: typeof actions.GET_OBSERVATIONS_RESPONSE;
-  status: typeof status | undefined | null;
+  status: status;
   response: Observation[] | Error;
 }
 
@@ -108,7 +110,7 @@ export interface GetPadCondition {
 }
 export interface GetPadConditionResponse {
   type: typeof actions.GET_PAD_CONDITION_RESPONSE;
-  status: typeof status | undefined | null;
+  status: status;
   response: PadCondition[] | Error;
 }
 
@@ -117,7 +119,7 @@ export interface GetMoods {
 }
 export interface GetMoodsResponse {
   type: typeof actions.GET_MOODS_RESPONSE;
-  status: typeof status | undefined | null;
+  status: status;
   response: Mood[] | Error;
 }
 
@@ -126,7 +128,7 @@ export interface GetMedication {
 }
 export interface GetMedicationResponse {
   type: typeof actions.GET_MEDICATION_RESPONSE;
-  status: typeof status | undefined | null;
+  status: status;
   response: Medication[] | Error;
 }
 
@@ -135,7 +137,7 @@ export interface GetTasks {
 }
 export interface GetTasksResponse {
   type: typeof actions.GET_TASKS_RESPONSE;
-  status: typeof status | undefined | null;
+  status: status;
   response: Task[] | Error;
 }
 
@@ -160,7 +162,7 @@ export type ActionTypes =
 // #3 STATE TYPES
 
 export type LoadingState = {
-  readonly status: typeof status | null | undefined;
+  readonly status: status | null | undefined;
   readonly error: string | null | undefined;
 };
 
