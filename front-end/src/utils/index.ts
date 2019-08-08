@@ -90,15 +90,25 @@ export function getVisitsDataByDay (data: Event[]) {
 
   const parsedData = generateSortedArray(data);
   const uniqueDates = getUniqueValues(parsedData, 'day');
-
   return uniqueDates.map(date => {
 
     const today = parsedData.filter(e => e.day === date);
     const uniqueVisits = new Set(today.map(e => e.visit_id));
-
+    // get notes data if the event is a qualitative observation
+    const notes = today
+      .filter(e => {
+        const type = e.event_type;
+        const lookup = ['general_observation', 'mental_health_observation', 'physical_health_observation'];
+        return lookup.some(t => type === t) && !!e.note;
+      })
+      .map(e => e.note)
+      // clean out some redundant notes
+      .filter(note => !note.includes('Nothing unusual to report') && !note.includes('No changes'));
+    
     return {
       day: date,
-      visits: uniqueVisits.size
+      visits: uniqueVisits.size,
+      notes
     };
   });
 }

@@ -18,9 +18,22 @@ interface ActionProps {
 
 type AppProps = DataState & ActionProps;
 
+const cardFormat = `
+  box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,.1),
+    0 0.9375rem 1.40625rem rgba(90,97,105,.1),
+    0 0.25rem 0.53125rem rgba(90,97,105,.12),
+    0 0.125rem 0.1875rem rgba(90,97,105,.1);
+
+  padding: 10px;
+  margin-bottom: 20px;
+  `;
+
 const StyledContainer = styled.div`
   position: relative;
   height: 50vh;
+  margin-left: 20px;
+  margin-right: 20px;
+  ${cardFormat}
 `;
 
 class Nutrition extends React.Component<AppProps> {

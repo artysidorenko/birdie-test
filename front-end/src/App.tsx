@@ -20,17 +20,18 @@ interface AppState {
 
 const GlobalStyle = createGlobalStyle`
   body {
+    margin: 0;
     height: 100vh;
     background-color: #F9F9F9;
-    > div {
-      height: 100%;
-    }
+    font-family: sans-serif;
   }
 `;
 
 const AppContainer = styled.div`
   width: 100%;
-  height: 100%;
+  height: 95%;
+  position: relative;
+  margin-bottom: 20px;
 `;
 
 class App extends React.Component<AppProps, AppState> {

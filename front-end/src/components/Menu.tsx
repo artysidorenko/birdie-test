@@ -1,6 +1,11 @@
 import * as React from 'react';
-import { NavLink } from 'react-router-dom';
-// import { Button } from 'reakit/Button';
+import { NavLink, Link } from 'react-router-dom';
+import {
+  useMenuState,
+  Menu,
+  MenuItem,
+  MenuDisclosure,
+} from 'reakit/Menu';
 import styled from 'styled-components';
 import Logo from '@App/components/Logo';
 
@@ -11,48 +16,96 @@ const buttons = [
   { title: 'Other', link: '/other' }
 ];
 
-const StyledNavLink = styled(NavLink)`
+const sharedMenuStyle = `
   background-color: white;
   border: 2px solid #e7e7e7;
   color: black;
-  padding: 16px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   cursor: pointer;
   border-radius: 5px;
-  width: 75px;
+`;
 
+const StyledNavLink = styled(NavLink)`
+  ${sharedMenuStyle}
+  padding: 16px 32px;
+  margin: 4px 2px;
   &:hover {
     background-color: #e7e7e7;
   }
+`;
+
+const StyledMenuDisclosure = styled(MenuDisclosure)`
+  ${sharedMenuStyle}
+  font-weight: bold;
+  padding-left: 20px;
+  padding-right: 20px;
+`;
+
+const StyledMenu = styled(Menu)`
+  ${sharedMenuStyle}
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  background-color: white;
+  z-index: 99;
+`;
+
+const StyledMenuItem = styled(MenuItem)`
+  ${sharedMenuStyle}
+  border: none;
+  padding: 20px;
+  margin: auto;
+  font-weight: bold;
+  background-color: white;
+`;
+
+const StyledLink = styled(Link)`
+  color: inherit;
+  text-decoration: none;
+  display: block;
 `;
 
 const StyledLogo = styled(Logo)`
   align-self: flex-start
 `;
 
+const MobileLogo = styled(Logo)`
+  height: 50px;
+  width: auto;
+`;
+
 const MenuBar = styled.div`
-  width: 100vw;
+  box-sizing: border-box;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between
-  padding-left: 20px;
-  padding-right: 20px;
-  * {
-    margin-left: 10px;
-    margin-right: 10px;
+  box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,.1),
+  0 0.9375rem 1.40625rem rgba(90,97,105,.1),
+  0 0.25rem 0.53125rem rgba(90,97,105,.12),
+  0 0.125rem 0.1875rem rgba(90,97,105,.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  @media screen and (max-width: 950px) {
+    padding: 10px;
   }
 `;
 
-const Menu = () => (
+const RightSection = styled.div`
+  @media (max-width: 950px) {
+    flex-direction: column;
+  }
+`;
+
+const MenuDesktop = () => (
   <MenuBar>
     <StyledLogo src={require('../assets/images/logo-birdie.svg')} />
-    <div>
+    <RightSection>
       {buttons.map(button => (
         <StyledNavLink
           key={button.title}
@@ -65,8 +118,29 @@ const Menu = () => (
           {button.title}
         </StyledNavLink>
       ))}
-    </div>
+    </RightSection>
   </MenuBar>
 );
 
-export default Menu;
+const MenuMobile = () => {
+  const menu = useMenuState();
+  return (
+    <MenuBar>
+      <StyledMenuDisclosure {...menu}>
+        Menu
+      </StyledMenuDisclosure>
+      <StyledMenu {...menu} aria-label="Menu">
+        {buttons.map(button => (
+          <StyledMenuItem {...menu} key={button.title}>
+            <StyledLink to={button.link}>{button.title}</StyledLink>
+          </StyledMenuItem>
+        ))}
+      </StyledMenu>
+      <MobileLogo src={require('../assets/images/logo-birdie.svg')} />
+    </MenuBar>
+  );
+};
+
+const _Menu = window.innerWidth > 950 ? MenuDesktop : MenuMobile;
+
+export default _Menu;

@@ -35,11 +35,11 @@ const MoodsBar = ({ data }: { data: Mood[] }) => {
     labels: collapsedData.map(event => `Week ${event.week}`),
     datasets: [
       {
-        backgroundColor: 'rgba(255,99,132,0.2)',
-        borderColor: 'rgba(255,99,132,1)',
+        backgroundColor: 'rgba(75,192,192,0.2)',
+        borderColor: 'rgba(75,192,192,1)',
         borderWidth: 1,
-        hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-        hoverBorderColor: 'rgba(255,99,132,1)',
+        hoverBackgroundColor: 'rgba(75,192,192,0.4)',
+        hoverBorderColor: 'rgba(75,192,192,1)',
         data: collapsedData.map(event => event.moodScore)
       }
     ]

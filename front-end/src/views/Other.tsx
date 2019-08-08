@@ -19,16 +19,39 @@ interface ActionProps {
 
 type AppProps = DataState & ActionProps;
 
+const cardFormat = `
+  box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,.1),
+    0 0.9375rem 1.40625rem rgba(90,97,105,.1),
+    0 0.25rem 0.53125rem rgba(90,97,105,.12),
+    0 0.125rem 0.1875rem rgba(90,97,105,.1);
+
+  padding: 10px;
+  margin-bottom: 20px;
+  `;
+
 const StyledContainer = styled.div`
   position: relative;
   height: 70vh;
   width: 40vw;
+  ${cardFormat}
+
+  @media screen and (max-width: 950px) {
+    position: relative;
+    height: 50vh;
+    width: 80vw;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 `;
 
 const Row = styled.div`
   position: relative;
   display: flex;
   justify-content: space-evenly;
+
+  @media screen and (max-width: 950px) {
+    flex-direction: column;
+  }
 `;
 
 class Other extends React.Component<AppProps> {

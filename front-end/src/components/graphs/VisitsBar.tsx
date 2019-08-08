@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Bar } from 'react-chartjs-2';
-import { ChartData, ChartOptions } from 'chart.js';
+import { ChartData, ChartOptions, ChartTooltipOptions, ChartTooltipItem } from 'chart.js';
 
 import { Event } from '../../store/types';
 import { getVisitsDataByDay } from '@App/utils';
@@ -35,20 +35,31 @@ const VisitsBar = ({ data }: { data: Event[] }) => {
     labels: collapsedData.map(event => event.day),
     datasets: [
       {
-        backgroundColor: 'rgba(255,99,132,0.2)',
-        borderColor: 'rgba(255,99,132,1)',
+        backgroundColor: 'rgba(192,75,134,0.2)',
+        borderColor: 'rgba(192,75,134,1)',
         borderWidth: 1,
-        hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-        hoverBorderColor: 'rgba(255,99,132,1)',
+        hoverBackgroundColor: 'rgba(192,75,134,0.4)',
+        hoverBorderColor: 'rgba(192,75,134,1)',
         data: collapsedData.map(event => event.visits)
       }
     ]
   };
 
+  const toolTipOptions: ChartTooltipOptions = {
+    displayColors: false,
+    callbacks: {
+      label: function(tooltipItem: ChartTooltipItem) {
+        let index = tooltipItem.index ? tooltipItem.index : 0;
+        let datapoint = collapsedData[index];
+        return datapoint.notes;
+      }
+    }
+  };
+
   return (
     <Bar
       data={chartData}
-      options={chartOptions}
+      options={{ ...chartOptions, tooltips: { ...toolTipOptions } }}
     />
   );
 };

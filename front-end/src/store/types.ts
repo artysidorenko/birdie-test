@@ -7,6 +7,7 @@ export interface Event {
   caregiver_id: string;
   visit_id: string;
   care_recipient_id: string;
+  note: string;
 }
 
 export interface FluidIntake extends Event {
@@ -16,7 +17,7 @@ export interface FluidIntake extends Event {
 
 export interface FoodIntake extends Event {
   meal: string;
-  note: number;
+  note: string;
 }
 
 // includes general, mental health & physical observations
