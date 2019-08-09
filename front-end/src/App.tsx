@@ -42,8 +42,6 @@ class App extends React.Component<AppProps, AppState> {
   }
 
   public render() {
-    /* tslint:disable:no-console */
-    // console.log(this.props.events.status, this.props.events.events);
     return (
       <>
         <GlobalStyle />

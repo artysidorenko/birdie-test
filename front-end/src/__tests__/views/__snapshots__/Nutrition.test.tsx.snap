@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nutrition Page renders without crashing (shallow) 1`] = `<Connect(Nutrition) />`;

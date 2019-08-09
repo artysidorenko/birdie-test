@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Page renders without crashing (shallow) 1`] = `
+<Fragment>
+  Welcome to the Care Dashboard. Here you can view information about the care being received by the receipient, including updates on their mood and health.
+</Fragment>
+`;

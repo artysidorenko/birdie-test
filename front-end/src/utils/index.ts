@@ -22,7 +22,7 @@ export function generateSortedArray (dataArray: Array<any>): Array<any> {
 }
 
 /* tslint:disable-next-line:no-any */
-function addWeeksToArray (sortedArray: Array<any>): Array<any> {
+export function addWeeksToArray (sortedArray: Array<any>): Array<any> {
   return sortedArray.map(event => {
     const date = moment(event.timestamp);
     const week = date.week();
@@ -31,7 +31,7 @@ function addWeeksToArray (sortedArray: Array<any>): Array<any> {
 }
 
 /* tslint:disable-next-line:no-any */
-function getUniqueValues (dataArray: Array<any>, property: string): string[] {
+export function getUniqueValues (dataArray: Array<any>, property: string): string[] {
   return Array.from(
     new Set(dataArray.map(event => event[property]))
   );
