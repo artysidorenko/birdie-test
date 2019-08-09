@@ -45,6 +45,7 @@ export interface Task extends Event {
 
 // #2 ACTION TYPES AND INTERFACES
 
+// #2 ACTION TYPES AND INTERFACES
 export enum actions {
   GET_EVENTS = 'GET_EVENTS',
   GET_FLUID_INTAKE = 'GET_FLUID_INTAKE',
@@ -61,7 +62,8 @@ export enum actions {
   GET_PAD_CONDITION_RESPONSE = 'GET_PAD_CONDITION_RESPONSE ',
   GET_MOODS_RESPONSE = 'GET_MOODS_RESPONSE ',
   GET_MEDICATION_RESPONSE = 'GET_MEDICATION_RESPONSE ',
-  GET_TASKS_RESPONSE = 'GET_TASKS_RESPONSE'
+  GET_TASKS_RESPONSE = 'GET_TASKS_RESPONSE',
+  SET_ID = 'SET_ID'
 }
 
 export enum status {
@@ -70,8 +72,14 @@ export enum status {
   FAILURE = 'failure'
 }
 
+export interface SetID {
+  type: typeof actions.SET_ID;
+  id: string;
+}
+
 export interface GetEvents {
   type: typeof actions.GET_EVENTS;
+  id: string;
 }
 export interface GetEventsResponse {
   type: typeof actions.GET_EVENTS_RESPONSE;
@@ -81,6 +89,7 @@ export interface GetEventsResponse {
 
 export interface GetFluidIntake {
   type: typeof actions.GET_FLUID_INTAKE;
+  id: string;
 }
 export interface GetFluidIntakeResponse {
   type: typeof actions.GET_FLUID_INTAKE_RESPONSE;
@@ -90,6 +99,7 @@ export interface GetFluidIntakeResponse {
 
 export interface GetFoodIntake {
   type: typeof actions.GET_FOOD_INTAKE;
+  id: string;
 }
 export interface GetFoodIntakeResponse {
   type: typeof actions.GET_FOOD_INTAKE_RESPONSE;
@@ -99,6 +109,7 @@ export interface GetFoodIntakeResponse {
 
 export interface GetObservations {
   type: typeof actions.GET_OBSERVATIONS;
+  id: string;
 }
 export interface GetObservationsResponse {
   type: typeof actions.GET_OBSERVATIONS_RESPONSE;
@@ -108,6 +119,7 @@ export interface GetObservationsResponse {
 
 export interface GetPadCondition {
   type: typeof actions.GET_PAD_CONDITION;
+  id: string;
 }
 export interface GetPadConditionResponse {
   type: typeof actions.GET_PAD_CONDITION_RESPONSE;
@@ -117,6 +129,7 @@ export interface GetPadConditionResponse {
 
 export interface GetMoods {
   type: typeof actions.GET_MOODS;
+  id: string;
 }
 export interface GetMoodsResponse {
   type: typeof actions.GET_MOODS_RESPONSE;
@@ -126,6 +139,7 @@ export interface GetMoodsResponse {
 
 export interface GetMedication {
   type: typeof actions.GET_MEDICATION;
+  id: string;
 }
 export interface GetMedicationResponse {
   type: typeof actions.GET_MEDICATION_RESPONSE;
@@ -135,6 +149,7 @@ export interface GetMedicationResponse {
 
 export interface GetTasks {
   type: typeof actions.GET_TASKS;
+  id: string;
 }
 export interface GetTasksResponse {
   type: typeof actions.GET_TASKS_RESPONSE;
@@ -143,6 +158,7 @@ export interface GetTasksResponse {
 }
 
 export type ActionTypes =
+  | SetID
   | GetEvents
   | GetFluidIntake
   | GetFoodIntake
@@ -193,6 +209,7 @@ export type TaskState = LoadingState & {
 };
 
 export type DataState = {
+  readonly id: string,
   readonly events: EventsState;
   readonly fluid_intake: FluidState;
   readonly food_intake: FoodState;

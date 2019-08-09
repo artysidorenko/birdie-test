@@ -7,32 +7,24 @@ import { RootState } from '@App/store/reducers';
 import { mapStateToProps } from '../store';
 import { DataState, status as fetchStatus } from '../store/types';
 import { getFluidIntake, getFoodIntake } from '../store/actions';
+import { cardFormat } from '../utils/sharedStyle';
 
 import FluidGraph from '@App/components/graphs/FluidGraph';
 import FoodGraph from '@App/components/graphs/FoodGraph';
 
 interface ActionProps {
-  getFluidIntake: () => void;
-  getFoodIntake: () => void;
+  getFluidIntake: (id: string) => void;
+  getFoodIntake: (id: string) => void;
 }
 
 type AppProps = DataState & ActionProps;
-
-const cardFormat = `
-  box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,.1),
-    0 0.9375rem 1.40625rem rgba(90,97,105,.1),
-    0 0.25rem 0.53125rem rgba(90,97,105,.12),
-    0 0.125rem 0.1875rem rgba(90,97,105,.1);
-
-  padding: 10px;
-  margin-bottom: 20px;
-  `;
 
 const StyledContainer = styled.div`
   position: relative;
   height: 50vh;
   margin-left: 20px;
   margin-right: 20px;
+  padding: 10px;
   ${cardFormat}
 `;
 
@@ -40,8 +32,8 @@ class Nutrition extends React.Component<AppProps> {
   displayName: 'LineExample';
 
   componentDidMount() {
-    this.props.getFluidIntake();
-    this.props.getFoodIntake();
+    this.props.getFluidIntake(this.props.id);
+    this.props.getFoodIntake(this.props.id);
   }
 
   render() {
@@ -70,8 +62,8 @@ class Nutrition extends React.Component<AppProps> {
 }
 
 const mapDispatchToProps = (dispatch: Dispatch<RootState>) => ({
-  getFluidIntake: () => dispatch(getFluidIntake()),
-  getFoodIntake: () => dispatch(getFoodIntake())
+  getFluidIntake: (id: string) => dispatch(getFluidIntake(id)),
+  getFoodIntake: (id: string) => dispatch(getFoodIntake(id))
 });
 
 export default connect(

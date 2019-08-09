@@ -26,7 +26,23 @@ const chartOptions: ChartOptions = {
     position: 'left',
     fontSize: 20
   },
-  maintainAspectRatio: false
+  maintainAspectRatio: false,
+  scales: {
+    yAxes: [
+      {
+        gridLines: {
+          borderDash: [1, 3],
+        }
+      }
+    ],
+    xAxes: [
+      {
+        gridLines: {
+          borderDash: [1, 3],
+        }
+      }
+    ]
+  }
 };
 
 const FluidGraph = ({ data }: {data: FluidIntake[]}) => {

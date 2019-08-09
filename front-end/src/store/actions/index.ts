@@ -13,44 +13,58 @@ import {
 } from '../types';
 
 // INITIATORS
-export function getEvents(): ActionTypes {
+export function setID(id: string): ActionTypes {
   return {
-    type: actions.GET_EVENTS
+    type: actions.SET_ID,
+    id: id
   };
 }
-export function getFluidIntake(): ActionTypes {
+export function getEvents(id: string): ActionTypes {
   return {
-    type: actions.GET_FLUID_INTAKE
+    type: actions.GET_EVENTS,
+    id: id
   };
 }
-export function getFoodIntake(): ActionTypes {
+export function getFluidIntake(id: string): ActionTypes {
   return {
-    type: actions.GET_FOOD_INTAKE
+    type: actions.GET_FLUID_INTAKE,
+    id: id
   };
 }
-export function getMedication(): ActionTypes {
+export function getFoodIntake(id: string): ActionTypes {
   return {
-    type: actions.GET_MEDICATION
+    type: actions.GET_FOOD_INTAKE,
+    id: id
   };
 }
-export function getMoods(): ActionTypes {
+export function getMedication(id: string): ActionTypes {
   return {
-    type: actions.GET_MOODS
+    type: actions.GET_MEDICATION,
+    id: id
   };
 }
-export function getObservations(): ActionTypes {
+export function getMoods(id: string): ActionTypes {
   return {
-    type: actions.GET_OBSERVATIONS
+    type: actions.GET_MOODS,
+    id: id
   };
 }
-export function getPadCondition(): ActionTypes {
+export function getObservations(id: string): ActionTypes {
   return {
-    type: actions.GET_PAD_CONDITION
+    type: actions.GET_OBSERVATIONS,
+    id: id
   };
 }
-export function getTasks(): ActionTypes {
+export function getPadCondition(id: string): ActionTypes {
   return {
-    type: actions.GET_TASKS
+    type: actions.GET_PAD_CONDITION,
+    id: id
+  };
+}
+export function getTasks(id: string): ActionTypes {
+  return {
+    type: actions.GET_TASKS,
+    id: id
   };
 }
 

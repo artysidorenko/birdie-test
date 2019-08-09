@@ -3,8 +3,8 @@
 exports[`Application renders without crashing (shallow) 1`] = `
 <Fragment>
   <GlobalStyleComponent />
+  <MenuDesktop />
   <styled.div>
-    <MenuDesktop />
     <Route
       component={[Function]}
       exact={true}

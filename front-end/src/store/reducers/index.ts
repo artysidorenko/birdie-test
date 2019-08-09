@@ -8,6 +8,11 @@ export type RootState = Readonly<{
 
 export const dataReducer: Reducer<DataState> = (state = initialState, action) => {
   switch (action.type) {
+    case actions.SET_ID:
+      return {
+        ...state,
+        id: action.id
+      };
     case actions.GET_EVENTS_RESPONSE:
       return {
         ...state,

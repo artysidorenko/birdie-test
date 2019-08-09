@@ -31,11 +31,11 @@ const medicationRoute1 = '/regular_medication_taken';
 const medicationRoute2 = '/regular_medication_not_taken';
 const padRoute = '/incontinence_pad_observation';
 const tasksRoute = '/task_completed';
-const suffix = `?id=df50cac5-293c-490d-a06c-ee26796f850d`;
+// const suffix = `?id=df50cac5-293c-490d-a06c-ee26796f850d`;
 
 function* getEvents(action: GetEvents) {
   try {
-    const response = yield call(fetch, new Request(host + prefix + suffix));
+    const response = yield call(fetch, new Request(host + prefix + '?id=' + action.id));
     if (response.status === 200) {
       const data = yield response.json();
       yield put(getEventsResponse(data, status.SUCCESS));
@@ -49,7 +49,10 @@ function* getEvents(action: GetEvents) {
 
 function* getFluidIntake(action: GetFluidIntake) {
   try {
-    const response = yield call(fetch, new Request(host + prefix + fluidRoute + suffix));
+    const response = yield call(
+      fetch,
+      new Request(host + prefix + fluidRoute + '?id=' + action.id)
+    );
     if (response.status === 200) {
       const data = yield response.json();
       yield put(getFluidIntakeResponse(data, status.SUCCESS));
@@ -65,7 +68,7 @@ function* getFoodIntake(action: GetFoodIntake) {
   try {
     const response = yield call(
       fetch,
-      new Request(host + prefix + foodRoute + suffix)
+      new Request(host + prefix + foodRoute + '?id=' + action.id)
     );
     if (response.status === 200) {
       const data = yield response.json();
@@ -82,7 +85,7 @@ function* getMoods(action: GetMoods) {
   try {
     const response = yield call(
       fetch,
-      new Request(host + prefix + moodRoute + suffix)
+      new Request(host + prefix + moodRoute + '?id=' + action.id)
     );
     if (response.status === 200) {
       const data = yield response.json();
@@ -99,11 +102,11 @@ function* getMedication(action: GetMedication) {
   try {
     const response1 = yield call(
       fetch,
-      new Request(host + prefix + medicationRoute1 + suffix)
+      new Request(host + prefix + medicationRoute1 + '?id=' + action.id)
     );
     const response2 = yield call(
       fetch,
-      new Request(host + prefix + medicationRoute2 + suffix)
+      new Request(host + prefix + medicationRoute2 + '?id=' + action.id)
     );
     if (response1.status === 200 && response2.status === 200) {
       const data1 = yield response1.json();
@@ -122,7 +125,7 @@ function* getPadCondition(action: GetPadCondition) {
   try {
     const response = yield call(
       fetch,
-      new Request(host + prefix + padRoute + suffix)
+      new Request(host + prefix + padRoute + '?id=' + action.id)
     );
     if (response.status === 200) {
       const data = yield response.json();
@@ -139,7 +142,7 @@ function* getTasks(action: GetTasks) {
   try {
     const response = yield call(
       fetch,
-      new Request(host + prefix + tasksRoute + suffix)
+      new Request(host + prefix + tasksRoute + '?id=' + action.id)
     );
     if (response.status === 200) {
       const data = yield response.json();

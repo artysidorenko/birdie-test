@@ -10,15 +10,15 @@ import styled from 'styled-components';
 import Logo from '@App/components/Logo';
 
 const buttons = [
-  { title: 'Home', link: '/' },
+  { title: 'Home', link: '/home' },
   { title: 'General', link: '/general' },
   { title: 'Nutrition', link: '/nutrition' },
   { title: 'Other', link: '/other' }
 ];
 
 const sharedMenuStyle = `
-  background-color: white;
-  border: 2px solid #e7e7e7;
+  background-color: #E5F2F2;
+  border: 2px solid grey;
   color: black;
   text-align: center;
   text-decoration: none;
@@ -80,6 +80,7 @@ const MobileLogo = styled(Logo)`
 `;
 
 const MenuBar = styled.div`
+  background-color: #E5F2F2;
   box-sizing: border-box;
   width: 100%;
   display: flex;
@@ -112,7 +113,7 @@ const MenuDesktop = () => (
           to={button.link}
           activeStyle={{
             fontWeight: 'bold',
-            borderColor: 'grey'
+            border: '4px solid grey'
           }}
         >
           {button.title}

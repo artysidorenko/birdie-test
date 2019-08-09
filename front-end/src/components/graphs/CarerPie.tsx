@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Pie } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 import { ChartData, ChartOptions, ChartTooltipOptions, ChartTooltipItem } from 'chart.js';
 
 import { Event } from '../../store/types';
@@ -47,7 +47,7 @@ const CarerPie = ({ data }: { data: Event[] }) => {
   };
 
   return (
-    <Pie
+    <Doughnut
       data={chartData}
       options={{ ...chartOptions, tooltips: { ...toolTipOptions } }}
     />

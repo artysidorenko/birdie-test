@@ -19,6 +19,6 @@
       "reverted": "task_completion_reverted"
     }
   },
-  "care_recipient_id": "df50cac5-293c-490d-a06c-ee26796f850d"
+  "care_recipient_id": ["df50cac5-293c-490d-a06c-ee26796f850d", "ad3512a6-91b1-4d7d-a005-6f8764dd0111"]
 }
 

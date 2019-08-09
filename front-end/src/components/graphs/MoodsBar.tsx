@@ -19,6 +19,16 @@ const chartOptions: ChartOptions = {
         ticks: {
           beginAtZero: true,
           max: 100
+        },
+        gridLines: {
+          borderDash: [1, 3],
+        }
+      }
+    ],
+    xAxes: [
+      {
+        gridLines: {
+          display: false
         }
       }
     ]

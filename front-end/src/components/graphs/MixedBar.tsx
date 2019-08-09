@@ -24,13 +24,19 @@ const chartOptions: ChartOptions = {
         position: 'left',
         id: 'y-axis-1',
         gridLines: {
-          display: true
+          borderDash: [1, 3],
         },
         ticks: {
           beginAtZero: true,
           max: 30
         },
       }
+    ],
+    xAxes: [
+      {
+        gridLines: {
+          borderDash: [1, 3],
+        }}
     ]
   }
 };
@@ -83,9 +89,12 @@ const MedicationBar = ({ medData, padData }: { medData: Medication[], padData: P
     callbacks: {
       label: function(tooltipItem: ChartTooltipItem) {
         let index = tooltipItem.index ? tooltipItem.index : 0;
-        let datapoint = collapsedMedData[index];
+        let med = collapsedMedData[index];
+        let pad = collapsedPadData[index];
         return [
-          `# of Misses: ${datapoint.missed}`,
+          `# of Med. doses missed: ${med.missed}`,
+          `Pad in wet condition: ${pad.wet}`,
+          `Pad in soiled condition: ${pad.soiled}`,
         ];
       }
     }

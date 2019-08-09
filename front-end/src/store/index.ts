@@ -27,6 +27,7 @@ sagaMiddleware.run(initSaga);
 export default store;
 
 export const mapStateToProps = (state: RootState, ownProps: object): DataState => ({
+  id: state.data.id,
   events: state.data.events,
   fluid_intake: state.data.fluid_intake,
   food_intake: state.data.food_intake,

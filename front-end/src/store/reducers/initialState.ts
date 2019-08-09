@@ -1,4 +1,5 @@
 export const initialState = {
+  id: 'df50cac5-293c-490d-a06c-ee26796f850d',
   events: {
     events: [],
     status: null,

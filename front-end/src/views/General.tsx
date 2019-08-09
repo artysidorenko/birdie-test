@@ -7,33 +7,45 @@ import { RootState } from '@App/store/reducers';
 import { mapStateToProps } from '../store';
 import { DataState, status as fetchStatus } from '../store/types';
 import { getEvents, getMoods } from '../store/actions';
+import { cardFormat } from '../utils/sharedStyle';
 
 import VisitsBar from '@App/components/graphs/VisitsBar';
 import CarerPie from '@App/components/graphs/CarerPie';
 import MoodsBar from '@App/components/graphs/MoodsBar';
 
 interface ActionProps {
-  getEvents: () => void;
-  getMoods: () => void;
+  getEvents: (id: string) => void;
+  getMoods: (id: string) => void;
 }
 
 type AppProps = DataState & ActionProps;
-
-const cardFormat = `
-  box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,.1),
-    0 0.9375rem 1.40625rem rgba(90,97,105,.1),
-    0 0.25rem 0.53125rem rgba(90,97,105,.12),
-    0 0.125rem 0.1875rem rgba(90,97,105,.1);
-
-  padding: 10px;
-  margin-bottom: 20px;
-  `;
 
 const StyledWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  margin: auto;
 
+  @media screen and (max-width: 950px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const Row = styled.div`
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  @media screen and (min-width: 951px) {
+    height: 40vh;
+    margin-bottom: 20px;
+  }
   @media screen and (max-width: 950px) {
     flex-direction: column;
     align-items: center;
@@ -43,31 +55,24 @@ const StyledWrapper = styled.div`
 const StyledContainer = styled.div`
   position: relative;
   height: 40vh;
-  width: 82.5vw;
+  width: 100%;
   ${cardFormat}
 `;
 const StyledContainerSmall = styled.div`
   position: relative;
+  width: 48%;
   height: 40vh;
-  width: 40vw;
-  margin-left: 10px;
-  margin-right: 10px;
   ${cardFormat}
 
   @media screen and (max-width: 950px) {
-    width: 80vw;
+    width: 100%;
     margin-left: 0px;
     margin-right: 0px;
   }
-`;
-const Row = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: space-evenly;
 
-  @media screen and (max-width: 950px) {
-    flex-direction: column;
-    align-items: center;
+  &#carers {
+    box-sizing: border-box;
+    padding-bottom: 20px;
   }
 `;
 
@@ -75,8 +80,8 @@ class General extends React.Component<AppProps> {
   displayName: '';
 
   componentDidMount() {
-    this.props.getEvents();
-    this.props.getMoods();
+    this.props.getEvents(this.props.id);
+    this.props.getMoods(this.props.id);
   }
 
   render() {
@@ -109,8 +114,8 @@ class General extends React.Component<AppProps> {
 }
 
 const mapDispatchToProps = (dispatch: Dispatch<RootState>) => ({
-  getEvents: () => dispatch(getEvents()),
-  getMoods: () => dispatch(getMoods())
+  getEvents: (id: string) => dispatch(getEvents(id)),
+  getMoods: (id: string) => dispatch(getMoods(id))
 });
 
 export default connect(

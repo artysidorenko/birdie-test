@@ -129,11 +129,51 @@ export function getCarerData (data: Event[]) {
   });
 }
 
+const tasks = {
+  'Assist with oral hygiene': 'Personal care',
+  'Ensure home is clean and tidy': 'Tidying',
+  'Ensure bed is made': 'Tidying',
+  'Assist to prepare a meal with drinks': 'Food & drink',
+  'Assist with applying creams to skin as instructed': 'Oral/topical meds',
+  'Assist to administer medication': 'Oral/topical meds',
+  'Ensure home is secure': 'Check secure',
+  'Assist with personal care': 'Personal care',
+  'Assist into bed': 'Bed assistance',
+  'Assist to change incontinence pants': 'Toilet assistance',
+  'Ensure required items are close to hand': 'Fetching items',
+  'Assist to change incontinence pad': 'Toilet assistance',
+  'Ensure drinks are to hand': 'Food & drink',
+  'Assist out of bed with stand or hoist': 'Bed assistance',
+  'Prompt and assist fluid intake': 'Food & drink',
+  'Prepare and serve a drink': 'Food & drink',
+  'Clean and tidy the bathroom': 'Tidying',
+  'Empty and disconnect day bag': 'Toilet assistance',
+  'Ensure surfaces are clean and tidy': 'Tidying',
+  'Assist to dress / undress': 'Personal care',
+  'Change incontinence pad': 'Toilet assistance',
+  'Empty and disconnect night bag': 'Toilet assistance',
+  'Empty leg bag and attach night bag': 'Toilet assistance',
+  'Clean and tidy the bedroom': 'Tidying',
+  'Empty bins and/or recycling': 'Tidying',
+  'Prepare and serve a meal with drinks': 'Food & drink',
+  'Check pressure areas': 'Personal care',
+  'Clean and tidy the kitchen': 'Tidying',
+  'Assist with feeding': 'Food & drink',
+  'Ensure curtains are open': 'Tidying',
+  'Assist with transfers into the living room': 'Personal care'
+};
+
 export function getTaskData(data: Task[]) {
-  const taskTypes = getUniqueValues(data, 'task_definition_description');
+  const cleanData = data.map(e => {
+    e.task_definition_description = tasks[e.task_definition_description];
+    return e;
+  });
+  const taskTypes = getUniqueValues(cleanData, 'task_definition_description');
 
   return taskTypes.map(task => {
-    const taskEvents = data.filter(e => e.task_definition_description === task);
+    const taskEvents = cleanData.filter(
+      e => e.task_definition_description === task
+    );
     const notes = taskEvents.map(e => e.task_schedule_note);
 
     return {

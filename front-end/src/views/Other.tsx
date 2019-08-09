@@ -7,32 +7,24 @@ import { RootState } from '@App/store/reducers';
 import { mapStateToProps } from '../store';
 import { DataState, status as fetchStatus } from '../store/types';
 import { getMedication, getPadCondition, getTasks } from '../store/actions';
+import { cardFormat } from '../utils/sharedStyle';
 
 import MixedBar from '@App/components/graphs/MixedBar';
 import TaskGraph from '@App/components/graphs/TaskGraph';
 
 interface ActionProps {
-  getMedication: () => void;
-  getPadCondition: () => void;
-  getTasks: () => void;
+  getMedication: (id: string) => void;
+  getPadCondition: (id: string) => void;
+  getTasks: (id: string) => void;
 }
 
 type AppProps = DataState & ActionProps;
-
-const cardFormat = `
-  box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,.1),
-    0 0.9375rem 1.40625rem rgba(90,97,105,.1),
-    0 0.25rem 0.53125rem rgba(90,97,105,.12),
-    0 0.125rem 0.1875rem rgba(90,97,105,.1);
-
-  padding: 10px;
-  margin-bottom: 20px;
-  `;
 
 const StyledContainer = styled.div`
   position: relative;
   height: 70vh;
   width: 40vw;
+  padding: 10px;
   ${cardFormat}
 
   @media screen and (max-width: 950px) {
@@ -55,12 +47,12 @@ const Row = styled.div`
 `;
 
 class Other extends React.Component<AppProps> {
-  displayName: 'LineExample';
+  displayName: 'Other';
 
   componentDidMount() {
-    this.props.getMedication();
-    this.props.getPadCondition();
-    this.props.getTasks();
+    this.props.getMedication(this.props.id);
+    this.props.getPadCondition(this.props.id);
+    this.props.getTasks(this.props.id);
   }
 
   render() {
@@ -90,9 +82,9 @@ class Other extends React.Component<AppProps> {
 }
 
 const mapDispatchToProps = (dispatch: Dispatch<RootState>) => ({
-  getMedication: () => dispatch(getMedication()),
-  getPadCondition: () => dispatch(getPadCondition()),
-  getTasks: () => dispatch(getTasks())
+  getMedication: (id: string) => dispatch(getMedication(id)),
+  getPadCondition: (id: string) => dispatch(getPadCondition(id)),
+  getTasks: (id: string) => dispatch(getTasks(id))
 });
 
 export default connect(

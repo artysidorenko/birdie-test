@@ -8,7 +8,7 @@ import { getVisitsDataByDay } from '@App/utils';
 const chartOptions: ChartOptions = {
   title: {
     display: true,
-    text: 'Number of Daily Visits',
+    text: 'Daily Visits Tracking',
     position: 'top',
     fontSize: 20
   },
@@ -19,6 +19,16 @@ const chartOptions: ChartOptions = {
         ticks: {
           beginAtZero: true,
           max: 10
+        },
+        gridLines: {
+          borderDash: [1, 3],
+        }
+      }
+    ],
+    xAxes: [
+      {
+        gridLines: {
+          display: false
         }
       }
     ]

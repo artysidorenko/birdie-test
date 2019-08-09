@@ -8,7 +8,7 @@ import { getTaskData } from '@App/utils';
 const chartOptions: ChartOptions = {
   title: {
     display: true,
-    text: 'Relative Distribution of Assistance Tasks',
+    text: 'Typical Assisted Tasks',
     position: 'top',
     fontSize: 20
   },
@@ -19,8 +19,9 @@ const chartOptions: ChartOptions = {
 };
 
 const TaskGraph = ({ data }: { data: Task[] }) => {
-  const collapsedData = getTaskData(data);
-
+  const collapsedData = getTaskData(data).sort((a, b) => a.count - b.count);
+  // tslint:disable:no-console
+  console.log(collapsedData.map(e => `${e.task} - ${e.count}`));
   const chartData: ChartData = {
     labels: collapsedData.map(e => e.task),
     datasets: [
@@ -30,7 +31,7 @@ const TaskGraph = ({ data }: { data: Task[] }) => {
         borderWidth: 1,
         hoverBackgroundColor: 'rgba(255,99,132,0.4)',
         hoverBorderColor: 'rgba(255,99,132,1)',
-        data: collapsedData.map(e => e.count).sort()
+        data: collapsedData.map(e => e.count)
       }
     ]
   };
@@ -39,9 +40,17 @@ const TaskGraph = ({ data }: { data: Task[] }) => {
     displayColors: false,
     callbacks: {
       label: function(tooltipItem: ChartTooltipItem) {
-        let index = tooltipItem.index ? tooltipItem.index : 0;
-        let datapoint = collapsedData[index];
-        return datapoint.notes;
+        const index = tooltipItem.index ? tooltipItem.index : 0;
+        const datapoint = collapsedData[index];
+        return `# of times assisted - ${datapoint.count}`;
+      }
+    }
+  };
+
+  const radarOptions = {
+    scale: {
+      ticks: {
+        beginAtZero: true
       }
     }
   };
@@ -49,7 +58,7 @@ const TaskGraph = ({ data }: { data: Task[] }) => {
   return (
     <Radar
       data={chartData}
-      options={{ ...chartOptions, tooltips: { ...toolTipOptions } }}
+      options={{ ...chartOptions, tooltips: { ...toolTipOptions }, ...radarOptions }}
     />
   );
 };
