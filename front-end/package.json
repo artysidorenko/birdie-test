@@ -15,7 +15,26 @@
     "react-scripts-redux-ts": "1.2.1",
     "reakit": "^1.0.0-beta.4",
     "redux-saga": "^1.0.2",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.2.0",
+    "@types/chai": "^4.2.0",
+    "@types/chart.js": "^2.7.56",
+    "@types/enzyme": "^3.10.3",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/history": "^4.7.2",
+    "@types/jest": "^24.0.13",
+    "@types/lodash": "^4.14.136",
+    "@types/node": "^12.0.1",
+    "@types/node-fetch": "^2.5.0",
+    "@types/react": "^16.8.17",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-redux": "^7.0.9",
+    "@types/redux": "^3.6.0",
+    "@types/styled-components": "^4.1.15",
+    "chai": "^4.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.4.0",
+    "typescript": "^3.4.5"
   },
   "scripts": {
     "start": "react-scripts-ts start",
@@ -38,24 +57,5 @@
     ]
   },
   "devDependencies": {
-    "@types/chai": "^4.2.0",
-    "@types/chart.js": "^2.7.56",
-    "@types/enzyme": "^3.10.3",
-    "@types/enzyme-adapter-react-16": "^1.0.5",
-    "@types/history": "^4.7.2",
-    "@types/jest": "^24.0.13",
-    "@types/lodash": "^4.14.136",
-    "@types/node": "^12.0.1",
-    "@types/node-fetch": "^2.5.0",
-    "@types/react": "^16.8.17",
-    "@types/react-dom": "^16.8.4",
-    "@types/react-redux": "^7.0.9",
-    "@types/redux": "^3.6.0",
-    "@types/styled-components": "^4.1.15",
-    "chai": "^4.2.0",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
-    "enzyme-to-json": "^3.4.0",
-    "typescript": "^3.4.5"
   }
 }
