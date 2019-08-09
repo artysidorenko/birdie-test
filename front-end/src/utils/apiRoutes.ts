@@ -22,10 +22,12 @@ const apiRoutes = {
   },
   query_prefix: '?id=',
   care_recipient_id: ['df50cac5-293c-490d-a06c-ee26796f850d', 'ad3512a6-91b1-4d7d-a005-6f8764dd0111']
-}
+};
 
 if (process.env.NODE_ENV === 'development') {
   apiRoutes.host = 'http://localhost:8000/';
+} else {
+  apiRoutes.host = 'https://birdie-server-asidorenko.herokuapp.com/';
 }
 
 export default apiRoutes;
