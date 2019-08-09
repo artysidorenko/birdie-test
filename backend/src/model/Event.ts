@@ -6,6 +6,8 @@ import {
   Table
 } from "sequelize-typescript";
 
+// tslint:disable: variable-name
+
 @Table({
   tableName: "events",
   timestamps: false

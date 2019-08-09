@@ -7,6 +7,10 @@
       "esnext"
     ],
     "target": "es2015",
+    "types": [
+      "jest",
+      "node"
+    ],
     "outDir": "./lib",
     "removeComments": true,
     "inlineSourceMap": true,
@@ -26,6 +30,7 @@
   ],
   "exclude": [
     "node_modules",
+    "**/*.spec.ts",
     "**/*-spec.ts"
   ]
 }
