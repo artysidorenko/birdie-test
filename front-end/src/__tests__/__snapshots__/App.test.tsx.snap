@@ -6,9 +6,13 @@ exports[`Application renders without crashing (shallow) 1`] = `
   <MenuDesktop />
   <styled.div>
     <Route
-      component={[Function]}
       exact={true}
       path="/"
+      render={[Function]}
+    />
+    <Route
+      component={[Function]}
+      path="/home"
     />
     <Route
       component={[Function]}

@@ -27,8 +27,7 @@ const chartOptions: ChartOptions = {
           borderDash: [1, 3],
         },
         ticks: {
-          beginAtZero: true,
-          max: 30
+          beginAtZero: true
         },
       }
     ],

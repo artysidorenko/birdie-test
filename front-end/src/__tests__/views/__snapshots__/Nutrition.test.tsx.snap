@@ -1,3 +1,88 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Nutrition Page renders without crashing (shallow) 1`] = `<Connect(Nutrition) />`;
+exports[`Nutrition Page renders without crashing (mount) 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <Connect(Nutrition)>
+    <Nutrition
+      events={
+        Object {
+          "error": null,
+          "events": Array [],
+          "status": null,
+        }
+      }
+      fluid_intake={
+        Object {
+          "error": null,
+          "fluid_intake": Array [],
+          "status": null,
+        }
+      }
+      food_intake={
+        Object {
+          "error": null,
+          "food_intake": Array [],
+          "status": null,
+        }
+      }
+      getFluidIntake={[Function]}
+      getFoodIntake={[Function]}
+      id="df50cac5-293c-490d-a06c-ee26796f850d"
+      medication={
+        Object {
+          "error": null,
+          "medication": Array [],
+          "status": null,
+        }
+      }
+      moods={
+        Object {
+          "error": null,
+          "moods": Array [],
+          "status": null,
+        }
+      }
+      observations={
+        Object {
+          "error": null,
+          "observations": Array [],
+          "status": null,
+        }
+      }
+      pad_condition={
+        Object {
+          "error": null,
+          "pad_condition": Array [],
+          "status": null,
+        }
+      }
+      tasks={
+        Object {
+          "error": null,
+          "status": null,
+          "tasks": Array [],
+        }
+      }
+    >
+      <div>
+        <span>
+          Loading...
+        </span>
+        <span>
+          Loading...
+        </span>
+      </div>
+    </Nutrition>
+  </Connect(Nutrition)>
+</Provider>
+`;

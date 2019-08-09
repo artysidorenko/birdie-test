@@ -86,6 +86,7 @@ class Dashboard extends React.Component<AppProps> {
             value="Change Recipient ID"
           />
         </form></StyledHeading>
+        <StyledHeading><small>ID currently set to {this.props.id}</small></StyledHeading>
       </Card>
       <Card>
         <StyledHeading>1. General Visit Information</StyledHeading>

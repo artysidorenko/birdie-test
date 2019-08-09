@@ -165,8 +165,10 @@ const tasks = {
 
 export function getTaskData(data: Task[]) {
   const cleanData = data.map(e => {
-    e.task_definition_description = tasks[e.task_definition_description];
-    return e;
+    return {
+      ...e,
+      task_definition_description: tasks[e.task_definition_description]
+    };
   });
   const taskTypes = getUniqueValues(cleanData, 'task_definition_description');
 

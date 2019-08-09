@@ -1,7 +1,1109 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home Page renders without crashing (shallow) 1`] = `
-<Fragment>
-  Welcome to the Care Dashboard. Here you can view information about the care being received by the receipient, including updates on their mood and health.
-</Fragment>
+exports[`Home Page renders without crashing (mount) 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <Connect(Dashboard)>
+    <Dashboard
+      events={
+        Object {
+          "error": null,
+          "events": Array [],
+          "status": null,
+        }
+      }
+      fluid_intake={
+        Object {
+          "error": null,
+          "fluid_intake": Array [],
+          "status": null,
+        }
+      }
+      food_intake={
+        Object {
+          "error": null,
+          "food_intake": Array [],
+          "status": null,
+        }
+      }
+      id="df50cac5-293c-490d-a06c-ee26796f850d"
+      medication={
+        Object {
+          "error": null,
+          "medication": Array [],
+          "status": null,
+        }
+      }
+      moods={
+        Object {
+          "error": null,
+          "moods": Array [],
+          "status": null,
+        }
+      }
+      observations={
+        Object {
+          "error": null,
+          "observations": Array [],
+          "status": null,
+        }
+      }
+      pad_condition={
+        Object {
+          "error": null,
+          "pad_condition": Array [],
+          "status": null,
+        }
+      }
+      setID={[Function]}
+      tasks={
+        Object {
+          "error": null,
+          "status": null,
+          "tasks": Array [],
+        }
+      }
+    >
+      <styled.div>
+        <StyledComponent
+          forwardedComponent={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "sc-bdVaJa",
+                "isStatic": true,
+                "lastClassName": "dRNEWd",
+                "rules": Array [
+                  "
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-evenly;
+              padding: 20px;
+              box-sizing: border-box;
+              width: 100%;
+              margin: auto;
+            
+              @media screen and (max-width: 950px) {
+                flex-direction: column;
+                align-items: center;
+              }
+            ",
+                ],
+              },
+              "displayName": "styled.div",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "sc-bdVaJa",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={null}
+        >
+          <div
+            className="sc-bdVaJa dRNEWd"
+          >
+            <styled.div>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-bwzfXH",
+                      "isStatic": true,
+                      "lastClassName": "dHnIqW",
+                      "rules": Array [
+                        "
+                    ",
+                        "
+                    box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,.1),
+                      0 0.9375rem 1.40625rem rgba(90,97,105,.1),
+                      0 0.25rem 0.53125rem rgba(90,97,105,.12),
+                      0 0.125rem 0.1875rem rgba(90,97,105,.1);
+                    margin-bottom: 20px;
+                    border-radius: 5px;
+                  ",
+                        "
+                    width: 45%;
+                    padding-right: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                  
+                    @media screen and (max-width: 950px) {
+                      width: 95%
+                    }
+                  ",
+                      ],
+                    },
+                    "displayName": "styled.div",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "sc-bwzfXH",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <div
+                  className="sc-bwzfXH dHnIqW"
+                >
+                  <styled.h1>
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-htpNat",
+                            "isStatic": true,
+                            "lastClassName": "hbgpzE",
+                            "rules": Array [
+                              "
+                          font-size: 16px;
+                          text-align: center;
+                        ",
+                            ],
+                          },
+                          "displayName": "styled.h1",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-htpNat",
+                          "target": "h1",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <h1
+                        className="sc-htpNat hbgpzE"
+                      >
+                        Welcome to the Care Dashboard.
+                      </h1>
+                    </StyledComponent>
+                  </styled.h1>
+                  <styled.h1>
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-htpNat",
+                            "isStatic": true,
+                            "lastClassName": "hbgpzE",
+                            "rules": Array [
+                              "
+                          font-size: 16px;
+                          text-align: center;
+                        ",
+                            ],
+                          },
+                          "displayName": "styled.h1",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-htpNat",
+                          "target": "h1",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <h1
+                        className="sc-htpNat hbgpzE"
+                      >
+                        Use the Box Below To Select Care Recipient ID Requested, and Follow the Navigaton Menu to Browse Available Information on Care Treatment.
+                      </h1>
+                    </StyledComponent>
+                  </styled.h1>
+                  <styled.h1>
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-htpNat",
+                            "isStatic": true,
+                            "lastClassName": "hbgpzE",
+                            "rules": Array [
+                              "
+                          font-size: 16px;
+                          text-align: center;
+                        ",
+                            ],
+                          },
+                          "displayName": "styled.h1",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-htpNat",
+                          "target": "h1",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <h1
+                        className="sc-htpNat hbgpzE"
+                      >
+                        <form
+                          onSubmit={[Function]}
+                        >
+                          <input
+                            onChange={[Function]}
+                            type="text"
+                            value="df50cac5-293c-490d-a06c-ee26796f850d"
+                          />
+                          <input
+                            type="submit"
+                            value="Change Recipient ID"
+                          />
+                        </form>
+                      </h1>
+                    </StyledComponent>
+                  </styled.h1>
+                  <styled.h1>
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-htpNat",
+                            "isStatic": true,
+                            "lastClassName": "hbgpzE",
+                            "rules": Array [
+                              "
+                          font-size: 16px;
+                          text-align: center;
+                        ",
+                            ],
+                          },
+                          "displayName": "styled.h1",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-htpNat",
+                          "target": "h1",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <h1
+                        className="sc-htpNat hbgpzE"
+                      >
+                        <small>
+                          ID currently set to 
+                          df50cac5-293c-490d-a06c-ee26796f850d
+                        </small>
+                      </h1>
+                    </StyledComponent>
+                  </styled.h1>
+                </div>
+              </StyledComponent>
+            </styled.div>
+            <styled.div>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-bwzfXH",
+                      "isStatic": true,
+                      "lastClassName": "dHnIqW",
+                      "rules": Array [
+                        "
+                    ",
+                        "
+                    box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,.1),
+                      0 0.9375rem 1.40625rem rgba(90,97,105,.1),
+                      0 0.25rem 0.53125rem rgba(90,97,105,.12),
+                      0 0.125rem 0.1875rem rgba(90,97,105,.1);
+                    margin-bottom: 20px;
+                    border-radius: 5px;
+                  ",
+                        "
+                    width: 45%;
+                    padding-right: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                  
+                    @media screen and (max-width: 950px) {
+                      width: 95%
+                    }
+                  ",
+                      ],
+                    },
+                    "displayName": "styled.div",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "sc-bwzfXH",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <div
+                  className="sc-bwzfXH dHnIqW"
+                >
+                  <styled.h1>
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-htpNat",
+                            "isStatic": true,
+                            "lastClassName": "hbgpzE",
+                            "rules": Array [
+                              "
+                          font-size: 16px;
+                          text-align: center;
+                        ",
+                            ],
+                          },
+                          "displayName": "styled.h1",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-htpNat",
+                          "target": "h1",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <h1
+                        className="sc-htpNat hbgpzE"
+                      >
+                        1. General Visit Information
+                      </h1>
+                    </StyledComponent>
+                  </styled.h1>
+                  <ul>
+                    <li>
+                      <styled.h2>
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "sc-bxivhb",
+                                "isStatic": true,
+                                "lastClassName": "gEfMvB",
+                                "rules": Array [
+                                  "
+                              font-size: 14px;
+                            ",
+                                ],
+                              },
+                              "displayName": "styled.h2",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "sc-bxivhb",
+                              "target": "h2",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                        >
+                          <h2
+                            className="sc-bxivhb gEfMvB"
+                          >
+                            Weekly Mood Score
+                          </h2>
+                        </StyledComponent>
+                      </styled.h2>
+                      <styled.p>
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "sc-ifAKCX",
+                                "isStatic": true,
+                                "lastClassName": "dhemhj",
+                                "rules": Array [
+                                  "
+                              font-size: 13px;
+                            ",
+                                ],
+                              },
+                              "displayName": "styled.p",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "sc-ifAKCX",
+                              "target": "p",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                        >
+                          <p
+                            className="sc-ifAKCX dhemhj"
+                          >
+                            Aggregated Score, based on qualitative mood observation scaled from happy (100), through okay (50) to sad (0). Where available, additional notes can be viewed by hovering over the individual bars.
+                          </p>
+                        </StyledComponent>
+                      </styled.p>
+                    </li>
+                    <li>
+                      <styled.h2>
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "sc-bxivhb",
+                                "isStatic": true,
+                                "lastClassName": "gEfMvB",
+                                "rules": Array [
+                                  "
+                              font-size: 14px;
+                            ",
+                                ],
+                              },
+                              "displayName": "styled.h2",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "sc-bxivhb",
+                              "target": "h2",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                        >
+                          <h2
+                            className="sc-bxivhb gEfMvB"
+                          >
+                            Same Carer Visits Snapshot
+                          </h2>
+                        </StyledComponent>
+                      </styled.h2>
+                      <styled.p>
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "sc-ifAKCX",
+                                "isStatic": true,
+                                "lastClassName": "dhemhj",
+                                "rules": Array [
+                                  "
+                              font-size: 13px;
+                            ",
+                                ],
+                              },
+                              "displayName": "styled.p",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "sc-ifAKCX",
+                              "target": "p",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                        >
+                          <p
+                            className="sc-ifAKCX dhemhj"
+                          >
+                            Total number of visits by each individual caregiver, with the aim of maintaining consistency of interactions with care receivers, and developing lasting bonds, by maximising same-carer visits.
+                          </p>
+                        </StyledComponent>
+                      </styled.p>
+                    </li>
+                    <li>
+                      <styled.h2>
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "sc-bxivhb",
+                                "isStatic": true,
+                                "lastClassName": "gEfMvB",
+                                "rules": Array [
+                                  "
+                              font-size: 14px;
+                            ",
+                                ],
+                              },
+                              "displayName": "styled.h2",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "sc-bxivhb",
+                              "target": "h2",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                        >
+                          <h2
+                            className="sc-bxivhb gEfMvB"
+                          >
+                            Daily Visits Tracking
+                          </h2>
+                        </StyledComponent>
+                      </styled.h2>
+                      <styled.p>
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "sc-ifAKCX",
+                                "isStatic": true,
+                                "lastClassName": "dhemhj",
+                                "rules": Array [
+                                  "
+                              font-size: 13px;
+                            ",
+                                ],
+                              },
+                              "displayName": "styled.p",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "sc-ifAKCX",
+                              "target": "p",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                        >
+                          <p
+                            className="sc-ifAKCX dhemhj"
+                          >
+                            Daily timeline of visits, with detailed notes (physical health, mental health and general observations) by caregivers available by hovering over indivdual days.
+                          </p>
+                        </StyledComponent>
+                      </styled.p>
+                    </li>
+                  </ul>
+                </div>
+              </StyledComponent>
+            </styled.div>
+            <styled.div>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-bwzfXH",
+                      "isStatic": true,
+                      "lastClassName": "dHnIqW",
+                      "rules": Array [
+                        "
+                    ",
+                        "
+                    box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,.1),
+                      0 0.9375rem 1.40625rem rgba(90,97,105,.1),
+                      0 0.25rem 0.53125rem rgba(90,97,105,.12),
+                      0 0.125rem 0.1875rem rgba(90,97,105,.1);
+                    margin-bottom: 20px;
+                    border-radius: 5px;
+                  ",
+                        "
+                    width: 45%;
+                    padding-right: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                  
+                    @media screen and (max-width: 950px) {
+                      width: 95%
+                    }
+                  ",
+                      ],
+                    },
+                    "displayName": "styled.div",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "sc-bwzfXH",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <div
+                  className="sc-bwzfXH dHnIqW"
+                >
+                  <styled.h1>
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-htpNat",
+                            "isStatic": true,
+                            "lastClassName": "hbgpzE",
+                            "rules": Array [
+                              "
+                          font-size: 16px;
+                          text-align: center;
+                        ",
+                            ],
+                          },
+                          "displayName": "styled.h1",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-htpNat",
+                          "target": "h1",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <h1
+                        className="sc-htpNat hbgpzE"
+                      >
+                        2. Nutritional Information
+                      </h1>
+                    </StyledComponent>
+                  </styled.h1>
+                  <ul>
+                    <li>
+                      <styled.h2>
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "sc-bxivhb",
+                                "isStatic": true,
+                                "lastClassName": "gEfMvB",
+                                "rules": Array [
+                                  "
+                              font-size: 14px;
+                            ",
+                                ],
+                              },
+                              "displayName": "styled.h2",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "sc-bxivhb",
+                              "target": "h2",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                        >
+                          <h2
+                            className="sc-bxivhb gEfMvB"
+                          >
+                            Fluid Intake Chart
+                          </h2>
+                        </StyledComponent>
+                      </styled.h2>
+                      <styled.p>
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "sc-ifAKCX",
+                                "isStatic": true,
+                                "lastClassName": "dhemhj",
+                                "rules": Array [
+                                  "
+                              font-size: 13px;
+                            ",
+                                ],
+                              },
+                              "displayName": "styled.p",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "sc-ifAKCX",
+                              "target": "p",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                        >
+                          <p
+                            className="sc-ifAKCX dhemhj"
+                          >
+                            Daily tracking of total fluid intake, with breakdown of regular and caffeinated fluids, to facilitate adequate hydration.
+                          </p>
+                        </StyledComponent>
+                      </styled.p>
+                    </li>
+                    <li>
+                      <styled.h2>
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "sc-bxivhb",
+                                "isStatic": true,
+                                "lastClassName": "gEfMvB",
+                                "rules": Array [
+                                  "
+                              font-size: 14px;
+                            ",
+                                ],
+                              },
+                              "displayName": "styled.h2",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "sc-bxivhb",
+                              "target": "h2",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                        >
+                          <h2
+                            className="sc-bxivhb gEfMvB"
+                          >
+                            Food Intake Chart
+                          </h2>
+                        </StyledComponent>
+                      </styled.h2>
+                      <styled.p>
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "sc-ifAKCX",
+                                "isStatic": true,
+                                "lastClassName": "dhemhj",
+                                "rules": Array [
+                                  "
+                              font-size: 13px;
+                            ",
+                                ],
+                              },
+                              "displayName": "styled.p",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "sc-ifAKCX",
+                              "target": "p",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                        >
+                          <p
+                            className="sc-ifAKCX dhemhj"
+                          >
+                            Number of meals and snacks eaten per day, with additional details on meal/snack composition available by hovering over indivdual datapoints.
+                          </p>
+                        </StyledComponent>
+                      </styled.p>
+                    </li>
+                  </ul>
+                </div>
+              </StyledComponent>
+            </styled.div>
+            <styled.div>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-bwzfXH",
+                      "isStatic": true,
+                      "lastClassName": "dHnIqW",
+                      "rules": Array [
+                        "
+                    ",
+                        "
+                    box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,.1),
+                      0 0.9375rem 1.40625rem rgba(90,97,105,.1),
+                      0 0.25rem 0.53125rem rgba(90,97,105,.12),
+                      0 0.125rem 0.1875rem rgba(90,97,105,.1);
+                    margin-bottom: 20px;
+                    border-radius: 5px;
+                  ",
+                        "
+                    width: 45%;
+                    padding-right: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                  
+                    @media screen and (max-width: 950px) {
+                      width: 95%
+                    }
+                  ",
+                      ],
+                    },
+                    "displayName": "styled.div",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "sc-bwzfXH",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <div
+                  className="sc-bwzfXH dHnIqW"
+                >
+                  <styled.h1>
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-htpNat",
+                            "isStatic": true,
+                            "lastClassName": "hbgpzE",
+                            "rules": Array [
+                              "
+                          font-size: 16px;
+                          text-align: center;
+                        ",
+                            ],
+                          },
+                          "displayName": "styled.h1",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-htpNat",
+                          "target": "h1",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <h1
+                        className="sc-htpNat hbgpzE"
+                      >
+                        3. Other (Hygiene/Care Assistance)
+                      </h1>
+                    </StyledComponent>
+                  </styled.h1>
+                  <ul>
+                    <li>
+                      <styled.h2>
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "sc-bxivhb",
+                                "isStatic": true,
+                                "lastClassName": "gEfMvB",
+                                "rules": Array [
+                                  "
+                              font-size: 14px;
+                            ",
+                                ],
+                              },
+                              "displayName": "styled.h2",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "sc-bxivhb",
+                              "target": "h2",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                        >
+                          <h2
+                            className="sc-bxivhb gEfMvB"
+                          >
+                            Hygiene and Care Tracking
+                          </h2>
+                        </StyledComponent>
+                      </styled.h2>
+                      <styled.p>
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "sc-ifAKCX",
+                                "isStatic": true,
+                                "lastClassName": "dhemhj",
+                                "rules": Array [
+                                  "
+                              font-size: 13px;
+                            ",
+                                ],
+                              },
+                              "displayName": "styled.p",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "sc-ifAKCX",
+                              "target": "p",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                        >
+                          <p
+                            className="sc-ifAKCX dhemhj"
+                          >
+                            Weekly Tracking of any missed medication doses, as well as conditions of incontinence pad. Please note week 20 does not contain a full week's information due to timing of data capture.
+                          </p>
+                        </StyledComponent>
+                      </styled.p>
+                    </li>
+                    <li>
+                      <styled.h2>
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "sc-bxivhb",
+                                "isStatic": true,
+                                "lastClassName": "gEfMvB",
+                                "rules": Array [
+                                  "
+                              font-size: 14px;
+                            ",
+                                ],
+                              },
+                              "displayName": "styled.h2",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "sc-bxivhb",
+                              "target": "h2",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                        >
+                          <h2
+                            className="sc-bxivhb gEfMvB"
+                          >
+                            Typical Assistance Tasks Chart
+                          </h2>
+                        </StyledComponent>
+                      </styled.h2>
+                      <styled.p>
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "sc-ifAKCX",
+                                "isStatic": true,
+                                "lastClassName": "dhemhj",
+                                "rules": Array [
+                                  "
+                              font-size: 13px;
+                            ",
+                                ],
+                              },
+                              "displayName": "styled.p",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "sc-ifAKCX",
+                              "target": "p",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                        >
+                          <p
+                            className="sc-ifAKCX dhemhj"
+                          >
+                            Snapshot of typical tasks that required assistance in the care period, helping to predict future care needs.
+                          </p>
+                        </StyledComponent>
+                      </styled.p>
+                    </li>
+                  </ul>
+                </div>
+              </StyledComponent>
+            </styled.div>
+          </div>
+        </StyledComponent>
+      </styled.div>
+    </Dashboard>
+  </Connect(Dashboard)>
+</Provider>
 `;

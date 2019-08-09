@@ -1,3 +1,128 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`General Page renders without crashing (shallow) 1`] = `<Connect(General) />`;
+exports[`General Page renders without crashing (mount) 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <Connect(General)>
+    <General
+      events={
+        Object {
+          "error": null,
+          "events": Array [],
+          "status": null,
+        }
+      }
+      fluid_intake={
+        Object {
+          "error": null,
+          "fluid_intake": Array [],
+          "status": null,
+        }
+      }
+      food_intake={
+        Object {
+          "error": null,
+          "food_intake": Array [],
+          "status": null,
+        }
+      }
+      getEvents={[Function]}
+      getMoods={[Function]}
+      id="df50cac5-293c-490d-a06c-ee26796f850d"
+      medication={
+        Object {
+          "error": null,
+          "medication": Array [],
+          "status": null,
+        }
+      }
+      moods={
+        Object {
+          "error": null,
+          "moods": Array [],
+          "status": null,
+        }
+      }
+      observations={
+        Object {
+          "error": null,
+          "observations": Array [],
+          "status": null,
+        }
+      }
+      pad_condition={
+        Object {
+          "error": null,
+          "pad_condition": Array [],
+          "status": null,
+        }
+      }
+      tasks={
+        Object {
+          "error": null,
+          "status": null,
+          "tasks": Array [],
+        }
+      }
+    >
+      <styled.div>
+        <StyledComponent
+          forwardedComponent={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "sc-bdVaJa",
+                "isStatic": true,
+                "lastClassName": "dRNEWd",
+                "rules": Array [
+                  "
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-evenly;
+              padding: 20px;
+              box-sizing: border-box;
+              width: 100%;
+              margin: auto;
+            
+              @media screen and (max-width: 950px) {
+                flex-direction: column;
+                align-items: center;
+              }
+            ",
+                ],
+              },
+              "displayName": "styled.div",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "sc-bdVaJa",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={null}
+        >
+          <div
+            className="sc-bdVaJa dRNEWd"
+          >
+            <span>
+              Loading...
+            </span>
+          </div>
+        </StyledComponent>
+      </styled.div>
+    </General>
+  </Connect(General)>
+</Provider>
+`;

@@ -20,8 +20,6 @@ const chartOptions: ChartOptions = {
 
 const TaskGraph = ({ data }: { data: Task[] }) => {
   const collapsedData = getTaskData(data).sort((a, b) => a.count - b.count);
-  // tslint:disable:no-console
-  console.log(collapsedData.map(e => `${e.task} - ${e.count}`));
   const chartData: ChartData = {
     labels: collapsedData.map(e => e.task),
     datasets: [

@@ -1,8 +1,10 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
+import { Provider } from 'react-redux';
 import { expect as _expect } from 'chai';
 
 import Home from '@App/views/Home';
+import store from '@App/store';
 
 /* Normally part of src/setupTests.js but ... */
 import { configure } from 'enzyme';
@@ -14,8 +16,8 @@ configure({ adapter: new Adapter() });
 
 describe('Home Page', () => {
 
-  it('renders without crashing (shallow)', () => {
-    const wrapper = shallow(<Home />);
+  it('renders without crashing (mount)', () => {
+    const wrapper = mount(<Provider store={store}><Home /></Provider>);
     expect(wrapper).toMatchSnapshot();
   });
 });

@@ -56,6 +56,7 @@ class Other extends React.Component<AppProps> {
   }
 
   render() {
+
     const { status: eventStatus, medication } = this.props.medication;
     const { status: padStatus, pad_condition } = this.props.pad_condition;
     const { status: taskStatus, tasks } = this.props.tasks;

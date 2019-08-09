@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Provider } from 'react-redux';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import { expect as _expect } from 'chai';
 
 import General from '@App/views/General';
@@ -16,8 +16,8 @@ configure({ adapter: new Adapter() });
 
 describe('General Page', () => {
 
-  it('renders without crashing (shallow)', () => {
-    const wrapper = shallow(<Provider store={store}><General /></Provider>);
+  it('renders without crashing (mount)', () => {
+    const wrapper = mount(<Provider store={store}><General /></Provider>);
     expect(wrapper).toMatchSnapshot();
   });
 });
