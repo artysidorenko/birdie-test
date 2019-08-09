@@ -3,19 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/react-router-dom": "^4.3.4",
-    "chart.js": "^2.8.0",
-    "lodash": "^4.17.15",
-    "moment": "^2.24.0",
-    "node-fetch": "^2.6.0",
-    "react": "^16.8.6",
-    "react-chartjs-2": "^2.7.6",
-    "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.1",
-    "react-scripts-redux-ts": "1.2.1",
-    "reakit": "^1.0.0-beta.4",
-    "redux-saga": "^1.0.2",
-    "styled-components": "^4.2.0",
     "@types/chai": "^4.2.0",
     "@types/chart.js": "^2.7.56",
     "@types/enzyme": "^3.10.3",
@@ -28,16 +15,30 @@
     "@types/react": "^16.8.17",
     "@types/react-dom": "^16.8.4",
     "@types/react-redux": "^7.0.9",
+    "@types/react-router-dom": "^4.3.4",
     "@types/redux": "^3.6.0",
     "@types/styled-components": "^4.1.15",
     "chai": "^4.2.0",
+    "chart.js": "^2.8.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "enzyme-to-json": "^3.4.0",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "node-fetch": "^2.6.0",
+    "react": "^16.8.6",
+    "react-chartjs-2": "^2.7.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1",
+    "react-scripts-redux-ts": "1.2.1",
+    "reakit": "^1.0.0-beta.4",
+    "redux-saga": "^1.0.2",
+    "serve": "^11.1.0",
+    "styled-components": "^4.2.0",
     "typescript": "^3.4.5"
   },
   "scripts": {
-    "start": "react-scripts-ts start",
+    "dev": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
@@ -45,7 +46,8 @@
     "create:store:item": "./node_modules/hygen/lib/bin.js store create",
     "clean": "rm -rf node_modules",
     "reinstall": "npm run clean && npm install",
-    "rebuild": "npm run clean && npm install && npm run build"
+    "rebuild": "npm run clean && npm install && npm run build",
+    "start": "./node_modules/.bin/serve -s build"
   },
   "jest": {
     "moduleNameMapper": {
@@ -56,6 +58,5 @@
       "enzyme-to-json/serializer"
     ]
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
