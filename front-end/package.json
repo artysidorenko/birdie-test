@@ -19,7 +19,7 @@
     "@types/redux": "^3.6.0",
     "@types/styled-components": "^4.1.15",
     "chai": "^4.2.0",
-    "chart.js": "^2.8.0",
+    "chart.js": "^2.9.4",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "enzyme-to-json": "^3.4.0",
